@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\Users\Nguyen Long\Desktop\TMP\HelloWork\aspnet-core\Backup\src\group6\Group6.SE347.L11_HelloWork.Web.Core\</UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp" Version="5.14.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="5.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Group6.SE347.L11_HelloWork.Application\Group6.SE347.L11_HelloWork.Application.csproj" />
+  </ItemGroup>
+</Project>

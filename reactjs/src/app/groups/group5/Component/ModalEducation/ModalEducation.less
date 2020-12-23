@@ -1,0 +1,268 @@
+//default, don't edit
+.Custom_Modal_Out_Shadow3 {
+    z-index: 1000000;
+    top: 0px;
+    left: 0px;
+    background: white;
+    border: 1px solid #d0cccc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    transition: all 0.8s;
+    opacity: 60%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.Custom_Modal_Out_Layout3 {
+    z-index: 1000000000;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.Custom_Modal_Wrapper3 {
+    border-top: #ffffff 3px solid;
+    border-bottom: #ffffff 3px solid;
+    z-index: 1000000001;
+    background: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    transition: all 0.5s;
+    left: 30%;
+    top: 5%;
+    width: 40%;
+    height: fit-content;
+    // max-height: 400px;
+    // min-height: 200px;
+    border-radius: 4px;
+    position: relative;
+}
+
+//responsive wrapper
+@media (min-width: 400px) {
+    .Custom_Modal_Wrapper3 {
+        left: 10%;
+        width: 80%;
+    }
+
+    .Custom_Modal_Main_Text3 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 600px) { // thu nhỏ
+    .Custom_Modal_Wrapper3 {
+        width: 50%;
+        left: 25%;
+    }
+
+    .Custom_Modal_Main_Text3 {
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 1500px) { // bình thường
+    .Custom_Modal_Wrapper3 {
+        left: 35%;
+        top: 5%;
+        width: 30%; //
+        // height: 30%;
+    }
+
+    .Custom_Modal_Main_Text3 {
+        font-size: 19px;
+    }
+}
+
+//header
+.Custom_Modal_Header3 {
+    padding-left: 15px;
+    padding-right: 30px;
+    width: 100%;
+    height: 2em;
+    display: flex;
+    position: relative;
+    font-family: 'Open Sans Condensed ';
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 0.5em;
+    line-height: 1em;
+    border-bottom: 1px solid #ffffff;
+    color: #3D3D3D;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+.Custom_Modal_Close_Button3 {
+    height: 20px;
+    width: 20px;
+    opacity: 60%;
+}
+
+.Custom_Modal_Close_Button3:hover {
+    opacity: 100%;
+}
+
+.Custom_Modal_Close_Button3:active {
+    opacity: 80%;
+    border-radius: 5px;
+}
+
+//body area
+.Custom_Modal_Body3 {
+    // padding: 10px 15px;
+    // height: 70%;
+    // display: flex;
+    // justify-content: start;
+    // border-bottom: 1px #c4c4c4 solid;
+    padding: 10px;
+    display: flex;
+}
+
+.Custom_Modal_Main_Content_Layout3 {
+    display: flex;
+    // background: gray;
+    width: 100%;
+}
+
+
+//Footer area
+.Custom_Modal_Footer3 {
+    border-top: 1px solid #ffffff;
+    display: flex;
+    background: rgb(255, 255, 255);
+    font-size: 18px;
+    justify-content: flex-end;  // căn lề bên phải
+    width: 95%;
+    line-height: 1em;
+    margin-right: 30px;
+}
+.Simple_Blue_Button3 {
+    box-sizing: border-box;
+    width: 140px;
+    height: 45px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    background: #5279db;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+    border: #ffffff;
+    user-select: none;
+    min-width: 80px;
+    margin-right: 10px;
+}
+.Simple_Blue_Button3:hover {
+    cursor: pointer;
+ 
+    opacity: 80%;
+}
+
+.Simple_Blue_Button3:active {
+    background: #c4c4c4;
+    cursor: pointer;
+   
+    opacity: 90%;
+}
+.Simple_Blue_Button3:disabled {
+    background: #c4c4c4;
+    color: white;
+   
+    cursor: pointer;
+    opacity: 90%;
+}
+
+
+.Simple_White_Button3 {
+    box-sizing: border-box;
+    width: 140px;
+    height: 45px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 5px;
+    background: #F5F5F5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #363636;
+    border: #F5F5F5 1px solid;
+    user-select: none;
+    margin-right: 30px;
+}
+.Simple_White_Button3:hover {
+    cursor: pointer;
+ 
+    opacity: 80%;
+}
+
+.Simple_White_Button3:active {
+    background: #c4c4c4;
+    cursor: pointer;
+   
+    opacity: 90%;
+}
+.Simple_White_Button3:disabled {
+    background: #c4c4c4;
+    color: white;
+   
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.Simple_Red_Button3 {
+    box-sizing: border-box;
+    width: 140px;
+    height: 45px;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 5px;
+    background: #F83D34;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    border: #F83D34 1px solid;
+    user-select: none;
+    margin-right: 30px;
+}
+.Simple_Red_Button1:hover {
+    cursor: pointer;
+  
+    opacity: 80%;
+}
+
+.Simple_Red_Button3:active {
+    background: #c4c4c4;
+    cursor: pointer;
+
+    opacity: 90%;
+}
+.Simple_Red_Button3:disabled {
+    background: #c4c4c4;
+    color: white;
+   
+    cursor: pointer;
+    opacity: 90%;
+}
+
+
+.Fontstyle3{
+    font-weight: bold;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top:0px;
+    font-family: 'Open Sans', sans-serif;
+}
+.styleSelect3{
+    height:30px;
+    width:100%;
+    border-color : #c4c4c4;
+    border-radius: 5px;
+}
+.Input3 {
+    height: 230px;
+}

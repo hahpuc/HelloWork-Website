@@ -1,0 +1,63 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+variables:
+  - group: var-gr-live
+pool:
+  vmImage: 'ubuntu-18.04'
+
+stages: 
+  - stage: testBuild
+    jobs:
+    - job: aspnet
+      timeoutInMinutes: 10
+      steps:
+      - script: dotnet restore aspnet-core/src/SE347.L11_HelloWork.Web.Host
+        displayName: 'dotnet restore'
+      - script: dotnet build aspnet-core/src/SE347.L11_HelloWork.Web.Host
+        displayName: 'dotnet build'
+
+    - job: reactjs
+      timeoutInMinutes: 10
+      steps:
+      - script: npm install
+        workingDirectory: reactjs
+        displayName: 'npm install'
+      - script: npm run build
+        workingDirectory: reactjs
+        displayName: 'npm build'
+  - stage: dockerize
+    jobs:
+    - job: docker
+      steps:
+        - script: |
+            cd reactjs
+            docker build --rm -t $imageFETag .
+            cd ..
+            cd aspnet-core
+            docker build --rm -t $imageBETag .
+            echo $dockerP | docker login repo.treescale.com -u $dockerU --password-stdin
+            docker push $imageFETag
+            docker push $imageBETag
+          env:
+            imageFETag: $(IMAGE_FE_TAG)
+            imageBETag: $(IMAGE_BE_TAG)
+            dockerU: $(DOCK_U)
+            dockerP: $(DOCK_P) 
+  - stage: deployment
+    jobs:
+    - job: ssh
+      steps:
+        - task: SSH@0
+          inputs:        
+            sshEndpoint: 'ServerSSHConnection'
+            runOptions: 'inline'
+            inline: |
+              docker pull $(IMAGE_FE_TAG)
+              docker pull $(IMAGE_BE_TAG)
+              cd $(PATH_TO_DEPLOY)
+              docker-compose --file $(DOCK_COMP_NAME) down 2> docker-compose.log
+              cat docker-compose.log
+              docker-compose --file $(DOCK_COMP_NAME) up -d 2> docker-compose.log
+              cat docker-compose.log
+            readyTimeout: '20000'
+
